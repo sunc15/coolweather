@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sunchen.coolweather.R;
+import com.sunchen.coolweather.service.AutuUpdateService;
 import com.sunchen.coolweather.util.HttpCallbackListener;
 import com.sunchen.coolweather.util.HttpUtil;
 import com.sunchen.coolweather.util.LogUtil;
@@ -117,6 +118,8 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
         currentDateText.setText(prefs.getString("current_date",""));
         weatherInfolayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
+        Intent i=new Intent(this, AutuUpdateService.class);
+        startService(i);
     }
 
 
